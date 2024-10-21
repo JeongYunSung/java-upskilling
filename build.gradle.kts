@@ -14,6 +14,15 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
+tasks.compileJava {
+    options.compilerArgs.addAll(listOf("--enable-preview"))
+}
+
+tasks.compileTestJava {
+    options.compilerArgs.addAll(listOf("--enable-preview"))
+}
+
 tasks.test {
     useJUnitPlatform()
+    jvmArgs("--enable-preview")
 }
